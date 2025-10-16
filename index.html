@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Manikanta Pochamalla — Data Engineer</title>
+  <meta name="description" content="Portfolio of Manikanta Pochamalla — Data Engineer specializing in ETL, Snowflake, and Big Data" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f1724; --card: #0b1220; --muted: #9aa4b2; --accent: #7c5cff; --glass: rgba(255,255,255,0.04);
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,#071023 0%, #091426 100%);color:#e6eef6}
+    .container{max-width:1100px;margin:36px auto;padding:28px}
+    header{display:flex;gap:24px;align-items:center}
+    .avatar{width:120px;height:120px;border-radius:18px;overflow:hidden;box-shadow:0 6px 30px rgba(124,92,255,0.18)}
+    .avatar img{width:100%;height:100%;object-fit:cover}
+    h1{margin:0;font-size:28px}
+    p.lead{color:var(--muted);margin:6px 0 0}
+    nav{margin-left:auto}
+    nav a{color:var(--muted);text-decoration:none;margin-left:18px}
+    .grid{display:grid;grid-template-columns:1fr 360px;gap:28px;margin-top:28px}
+    .card{background:var(--card);padding:20px;border-radius:14px;box-shadow:0 6px 18px rgba(2,6,23,0.6)}
+    .skills{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+    .skill{background:var(--glass);padding:6px 10px;border-radius:999px;color:var(--muted);font-weight:600;font-size:13px}
+    .section-title{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+    .section-title h3{margin:0}
+    .exp-item{margin-bottom:14px}
+    .exp-item h4{margin:0;font-size:15px}
+    .exp-item .meta{color:var(--muted);font-size:13px;margin-top:4px}
+    .exp-item p{margin:8px 0 0;color:#d7e4f3}
+    .projects{display:grid;grid-template-columns:1fr;gap:12px}
+    .project{padding:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);border-radius:10px}
+    .contact-list{display:flex;flex-direction:column;gap:8px}
+    .btn{display:inline-block;padding:10px 14px;background:linear-gradient(90deg,var(--accent),#39d0ff);color:#041;border-radius:10px;font-weight:700;text-decoration:none}
+    footer{margin-top:28px;color:var(--muted);font-size:13px;text-align:center}
+    @media (max-width:900px){.grid{grid-template-columns:1fr}.avatar{width:96px;height:96px}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div style="display:flex;gap:16px;align-items:center">
+        <div class="avatar">
+          <img src="20250510_135248_optimized.webp" alt="Manikanta Pochamalla Photo" loading="lazy">
+        </div>
+        <div>
+          <h1>Manikanta Pochamalla</h1>
+          <p class="lead">Data Engineer • AWS • Snowflake • BigQuery • Airflow • Spark</p>
+          <div style="margin-top:8px" class="skills">
+            <div class="skill">Python</div>
+            <div class="skill">SQL</div>
+            <div class="skill">Airflow</div>
+            <div class="skill">DBT</div>
+            <div class="skill">Snowflake</div>
+            <div class="skill">AWS</div>
+            <div class="skill">BigQuery</div>
+            <div class="skill">Spark</div>
+            <div class="skill">Kafka</div>
+          </div>
+        </div>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main class="grid">
+      <div>
+        <section id="about" class="card">
+          <div class="section-title"><h3>About</h3></div>
+          <p style="color:var(--muted);">Results-driven Data Engineer with 3+ years of experience designing, building, and optimizing data ecosystems across logistics and autonomous vehicle domains. Proficient in developing end-to-end data pipelines, orchestrating workflows, and enabling analytics using AWS, Snowflake, and BigQuery. Skilled in Python, Spark, Airflow, and DBT with a proven record of improving data reliability and automating processes.</p>
+        </section>
+
+        <section id="experience" style="margin-top:18px" class="card">
+          <div class="section-title"><h3>Professional Experience</h3></div>
+          <div class="exp-item">
+            <h4>Gatik AI — Data Engineer</h4>
+            <div class="meta">Feb 2023 – Present</div>
+            <p>• Designed and deployed scalable data ingestion pipelines for autonomous vehicle sensor and telematics data using Python and AWS S3.<br>• Enhanced Snowflake data warehouse models for analytics, ML training, and reporting, improving query performance by 30%.<br>• Built ETL pipelines in Airflow and DBT ensuring reliable and timely data delivery.<br>• Implemented Spark jobs on AWS EMR to process 10TB+ of sensor data weekly for real-time analytics.<br>• Led Kafka adoption for streaming data, improving event processing latency by 40%.</p>
+          </div>
+          <div class="exp-item">
+            <h4>Deliverr — Data Engineer</h4>
+            <div class="meta">Oct 2021 – Aug 2022</div>
+            <p>• Built and maintained complex ETL workflows with Python and Airflow to integrate logistics data into BigQuery.<br>• Created dimensional data models supporting large-scale analytics, improving report latency by 20%.<br>• Engineered SQL transformations powering Looker dashboards used by 200+ stakeholders.<br>• Processed multi-terabyte datasets using Spark for route optimization and predictive analytics.</p>
+          </div>
+        </section>
+
+        <section id="projects" style="margin-top:18px" class="card">
+          <div class="section-title"><h3>Key Projects</h3></div>
+          <div class="projects">
+            <div class="project">
+              <strong>Autonomous Vehicle Data Platform</strong>
+              <div class="meta">Python, AWS, Snowflake, Airflow</div>
+              <p>Architected automated ingestion and validation framework for 500+ autonomous vehicles, boosting ML data availability and enabling real-time insights.</p>
+            </div>
+            <div class="project">
+              <strong>Real-time Logistics Dashboard</strong>
+              <div class="meta">Kafka, BigQuery, Looker</div>
+              <p>Developed Kafka-powered logistics dashboard providing near-instant KPI visibility across fulfillment operations.</p>
+            </div>
+            <div class="project">
+              <strong>Data Quality Monitoring Framework</strong>
+              <div class="meta">Python, Airflow</div>
+              <p>Built automated data validation pipelines reducing reporting discrepancies by 30%.</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <aside>
+        <div class="card">
+          <div class="section-title"><h3>Contact</h3></div>
+          <div class="contact-list">
+            <div>📧 <a href="mailto:manipochamalla85@gmail.com" style="color:#cfe8ff">manipochamalla85@gmail.com</a></div>
+            <div>📞 (984) 329-1618</div>
+            <div>📍 Morrisville, North Carolina</div>
+            <div>🔗 <a href="https://www.linkedin.com/in/manikanta-pochamalla" style="color:#cfe8ff" target="_blank">linkedin.com/in/manikanta-pochamalla</a></div>
+            <div style="margin-top:10px"><a class="btn" href="Manikanta_Pochamalla_Data_Engineer.pdf" download>Download Resume</a></div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:18px">
+          <div class="section-title"><h3>Education</h3></div>
+          <p class="meta">M.S. in Computer Science — Campbellsville University (GPA 3.7, Aug 2024)</p>
+        </div>
+
+        <div class="card" style="margin-top:18px">
+          <div class="section-title"><h3>Technical Skills</h3></div>
+          <div class="skills">
+            <div class="skill">Python</div>
+            <div class="skill">SQL</div>
+            <div class="skill">AWS</div>
+            <div class="skill">Snowflake</div>
+            <div class="skill">BigQuery</div>
+            <div class="skill">Airflow</div>
+            <div class="skill">DBT</div>
+            <div class="skill">Spark</div>
+            <div class="skill">Kafka</div>
+            <div class="skill">Docker</div>
+            <div class="skill">CI/CD</div>
+            <div class="skill">Looker</div>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      Crafted with ⚡ by Manikanta Pochamalla • <span id="year"></span>
+    </footer>
+  </div>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
