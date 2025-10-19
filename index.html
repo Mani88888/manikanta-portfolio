@@ -4,169 +4,201 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Manikanta Pochamalla — Data Engineer</title>
-  <meta name="description" content="Portfolio of Manikanta Pochamalla — Data Engineer specializing in Data Engineering, Cloud, and Machine Learning." />
+  <meta name="description" content="Manikanta Pochamalla — Data Engineer. Building scalable data pipelines, cloud infra, and ML-ready datasets." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg: #0f1724; --card: #0b1220; --muted: #9aa4b2; --accent: #7c5cff; --glass: rgba(255,255,255,0.04);
-      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-    }
-    *{box-sizing:border-box}
-    body{margin:0;background:linear-gradient(180deg,#071023 0%, #091426 100%);color:#e6eef6}
-    .container{max-width:1100px;margin:36px auto;padding:28px}
-    header{display:flex;gap:24px;align-items:center}
-    .avatar{width:120px;height:120px;border-radius:18px;overflow:hidden;box-shadow:0 6px 30px rgba(124,92,255,0.18)}
-    .avatar img{width:100%;height:100%;object-fit:cover}
-    h1{margin:0;font-size:28px}
-    p.lead{color:var(--muted);margin:6px 0 0}
-    nav{margin-left:auto}
-    nav a{color:var(--muted);text-decoration:none;margin-left:18px}
-    .grid{display:grid;grid-template-columns:1fr 360px;gap:28px;margin-top:28px}
-    .card{background:var(--card);padding:20px;border-radius:14px;box-shadow:0 6px 18px rgba(2,6,23,0.6)}
-    .skills{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
-    .skill{background:var(--glass);padding:6px 10px;border-radius:999px;color:var(--muted);font-weight:600;font-size:13px}
-    .section-title{display:flex;align-items:center;gap:10px;margin-bottom:12px}
-    .section-title h3{margin:0}
+    :root{--bg:#071025;--card:#081324;--muted:#99a6b3;--accent1:#7c5cff;--accent2:#39d0ff;--glass:rgba(255,255,255,0.03);--radius:14px;font-family:Inter,system-ui,Segoe UI,Roboto,Arial}
+    *{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,var(--bg),#071322);color:#e6eef6;line-height:1.45}
+    header{position:fixed;inset:0 0 auto 0;background:transparent;padding:18px 28px;display:flex;align-items:center;gap:20px;z-index:40}
+    .nav{display:flex;align-items:center;gap:18px;margin-left:auto}
+    .nav a{color:var(--muted);text-decoration:none;font-weight:600;font-size:14px}
+    .nav a:hover{color:white}
+    .container{max-width:1100px;margin:0 auto;padding:110px 20px 60px}
+    /* progress */
+    #progress{position:fixed;left:0;top:0;height:3px;background:linear-gradient(90deg,var(--accent1),var(--accent2));width:0;z-index:60}
+    /* hero */
+    .hero{display:grid;grid-template-columns:360px 1fr;gap:36px;align-items:center;min-height:82vh}
+    .avatar{width:360px;height:360px;border-radius:20px;background:linear-gradient(135deg,var(--accent1),var(--accent2));overflow:hidden;box-shadow:0 20px 50px rgba(6,8,20,0.7)}
+    .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+    .hero-intro h1{font-size:40px;margin:0 0 8px}
+    .lead{color:var(--muted);margin:0 0 14px}
+    .tagline{font-weight:600;display:inline-block;padding:8px 12px;border-radius:999px;background:var(--glass);color:var(--muted)}
+    .cta{display:flex;gap:12px;margin-top:18px}
+    .btn{padding:10px 14px;border-radius:12px;font-weight:700;text-decoration:none}
+    .btn-primary{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#041}
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+    /* sections */
+    .grid{display:grid;grid-template-columns:1fr 340px;gap:28px;margin-top:28px}
+    .card{background:var(--card);padding:18px;border-radius:var(--radius);box-shadow:0 8px 30px rgba(2,6,23,0.6)}
+    h2.section-title{margin:0 0 12px;font-size:18px}
     .exp-item{margin-bottom:14px}
     .exp-item h4{margin:0;font-size:15px}
-    .exp-item .meta{color:var(--muted);font-size:13px;margin-top:4px}
-    .exp-item p{margin:8px 0 0;color:#d7e4f3}
-    .projects{display:grid;grid-template-columns:1fr;gap:12px}
-    .project{padding:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);border-radius:10px}
-    .contact-list{display:flex;flex-direction:column;gap:8px}
-    .btn{display:inline-block;padding:10px 14px;background:linear-gradient(90deg,var(--accent),#39d0ff);color:#041;border-radius:10px;font-weight:700;text-decoration:none}
-    footer{margin-top:28px;color:var(--muted);font-size:13px;text-align:center}
-    @media (max-width:900px){.grid{grid-template-columns:1fr}.avatar{width:96px;height:96px}}
+    .meta{color:var(--muted);font-size:13px;margin-top:6px}
+    .projects .project{padding:12px;border-radius:10px;background:linear-gradient(180deg,rgba(255,255,255,0.01),transparent);margin-bottom:10px}
+    .skills{display:flex;flex-wrap:wrap;gap:8px}
+    .skill{background:var(--glass);padding:6px 10px;border-radius:999px;color:var(--muted);font-weight:700;font-size:13px}
+    /* back to top */
+    #topBtn{position:fixed;right:18px;bottom:24px;background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#041;padding:10px;border-radius:12px;border:none;cursor:pointer;display:none}
+    /* animations */
+    .fade-in{opacity:0;transform:translateY(14px);transition:all 650ms cubic-bezier(.2,.9,.25,1)}
+    .in-view{opacity:1;transform:none}
+    /* responsive */
+    @media (max-width:980px){.hero{grid-template-columns:1fr;gap:18px}.avatar{width:200px;height:200px;margin:0 auto}.grid{grid-template-columns:1fr}.container{padding-top:140px}}
   </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <div style="display:flex;gap:16px;align-items:center">
-        <div class="avatar">
-          <img src="20250510_135248_optimized.webp" alt="Manikanta Pochamalla Photo" loading="lazy">
-        </div>
-        <div>
-          <h1>Manikanta Pochamalla</h1>
-          <p class="lead">Data Engineer • Cloud • Snowflake • Python • Airflow • Spark</p>
-          <div style="margin-top:8px" class="skills">
-            <div class="skill">Python</div>
-            <div class="skill">SQL</div>
-            <div class="skill">Snowflake</div>
-            <div class="skill">AWS</div>
-            <div class="skill">Airflow</div>
-            <div class="skill">Spark</div>
-            <div class="skill">DBT</div>
-            <div class="skill">Docker</div>
-            <div class="skill">GitHub Actions</div>
-            <div class="skill">BigQuery</div>
-          </div>
+  <div id="progress"></div>
+  <header>
+    <div style="font-weight:800;color:white">Manikanta P.</div>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="avatar fade-in" id="heroAvatar">
+        <img src="20250510_135248_optimized.webp" alt="Manikanta Pochamalla">
+      </div>
+      <div class="hero-intro fade-in" id="heroIntro">
+        <div class="tagline">Data Engineer • Cloud • Big Data</div>
+        <h1>Manikanta Pochamalla</h1>
+        <p class="lead">Building scalable data pipelines, modernizing data platforms, and delivering production-ready datasets for analytics & ML.</p>
+        <div style="margin-top:8px;font-weight:700;color:var(--muted)" id="animatedTag"></div>
+        <div class="cta">
+          <a class="btn btn-primary" href="Manikanta_Pochamalla_Data_Engineer.pdf" download>Download Resume</a>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/manikanta-pochamalla" target="_blank">LinkedIn</a>
+          <a class="btn btn-ghost" href="https://github.com/Mani88888" target="_blank">GitHub</a>
         </div>
       </div>
-      <nav>
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
+    </section>
 
-    <main class="grid">
+    <!-- CONTENT GRID -->
+    <div class="grid">
       <div>
-        <section id="about" class="card">
-          <div class="section-title"><h3>About</h3></div>
-          <p style="color:var(--muted);">I am a highly motivated Data Engineer with hands-on experience in building, automating, and optimizing data workflows and pipelines in cloud environments. I specialize in Snowflake, Python, Airflow, and Spark, with proven success delivering reliable, scalable data solutions for analytics, reporting, and machine learning applications.</p>
+        <section id="about" class="card fade-in">
+          <h2 class="section-title">About</h2>
+          <p class="meta">Data Engineer with 4+ years of experience designing and implementing scalable data pipelines and ETL processes in cloud environments. Expertise in data modernization, optimizing processing workflows, and ensuring high data quality and reliability. Proficient in Python, SQL, PySpark, Databricks, and AWS services.</p>
         </section>
 
-        <section id="experience" style="margin-top:18px" class="card">
-          <div class="section-title"><h3>Professional Experience</h3></div>
+        <section id="experience" class="card fade-in" style="margin-top:18px">
+          <h2 class="section-title">Experience</h2>
 
           <div class="exp-item">
-            <h4>Generative AI Engineer — Confidential</h4>
-            <div class="meta">May 2024 – Present | Remote, USA</div>
-            <p>• Building AI-driven data applications leveraging LLMs for automation and analytics.<br>• Designing and deploying scalable pipelines for text and image data processing.<br>• Integrating OpenAI APIs and custom fine-tuned models into cloud-based microservices.<br>• Collaborating with cross-functional teams to embed AI solutions into enterprise workflows.</p>
+            <h4>Gatik — Data Engineer</h4>
+            <div class="meta">Feb 2023 – Present | United States</div>
+            <p>• Developed scalable data ingestion pipelines for vehicle sensor and telematics data using Python, AWS S3, and Kafka to support real-time analytics.<br>• Implemented data models and ETL in Databricks and SQL for autonomous truck performance analytics.<br>• Built ETL workflows using Airflow and Spark on EMR; implemented data quality checks, monitoring, and alerting.</p>
           </div>
 
           <div class="exp-item">
-            <h4>Data Engineer — Gatik AI</h4>
-            <div class="meta">Feb 2023 – Apr 2024 | Palo Alto, CA</div>
-            <p>• Designed and managed large-scale data pipelines for autonomous vehicle telemetry using Python and AWS.<br>• Implemented Snowflake data warehouse architecture for analytics and ML model training.<br>• Automated ETL processes using Airflow and Spark, improving data reliability by 35%.<br>• Collaborated with ML and analytics teams to improve model accuracy through better data quality.</p>
-          </div>
-
-          <div class="exp-item">
-            <h4>Data Engineer — Deliverr</h4>
-            <div class="meta">Oct 2021 – Jan 2023 | San Francisco, CA</div>
-            <p>• Developed ETL pipelines integrating logistics and e-commerce datasets into BigQuery.<br>• Built SQL transformations powering Looker dashboards used by 200+ business users.<br>• Optimized Spark jobs for large-scale data processing, reducing runtime by 25%.<br>• Automated data validation checks improving pipeline dependability and reducing manual work.</p>
+            <h4>Deliverr — Data Engineer</h4>
+            <div class="meta">Oct 2021 – Aug 2022 | United States</div>
+            <p>• Designed scalable data pipelines using Python and Databricks, integrating e-commerce order and inventory data into analytics platforms.<br>• Built SQL transformations powering Looker dashboards and optimized Spark jobs for large-scale processing.<br>• Automated workflows with Airflow and AWS Step Functions; integrated Kafka for real-time ingestion.</p>
           </div>
         </section>
 
-        <section id="projects" style="margin-top:18px" class="card">
-          <div class="section-title"><h3>Key Projects</h3></div>
+        <section id="projects" class="card fade-in" style="margin-top:18px">
+          <h2 class="section-title">Selected Projects</h2>
           <div class="projects">
             <div class="project">
               <strong>AI-Powered Data Ingestion Framework</strong>
-              <div class="meta">Python, Airflow, OpenAI API, AWS Lambda</div>
-              <p>Developed an intelligent data ingestion framework using LLMs for schema mapping and anomaly detection, reducing manual curation time by 60%.</p>
+              <div class="meta">Python · Airflow · OpenAI API · AWS Lambda</div>
+              <p>Built an LLM-assisted ingestion and schema-mapping pipeline that reduced manual data curation time by ~60% and automated anomaly detection for incoming datasets.</p>
             </div>
+
             <div class="project">
               <strong>Autonomous Vehicle Data Platform</strong>
-              <div class="meta">AWS, Snowflake, Spark</div>
-              <p>Built robust data ingestion and transformation pipelines supporting near real-time analytics for autonomous driving data.</p>
+              <div class="meta">Databricks · Spark · AWS EMR · Snowflake</div>
+              <p>Engineered ingestion and transformation pipelines to process multi-terabyte telemetry data weekly, enabling ML training and near-real-time analytics for operations teams.</p>
             </div>
+
             <div class="project">
               <strong>Data Quality Monitoring Dashboard</strong>
-              <div class="meta">Python, Airflow, Streamlit</div>
-              <p>Created an automated monitoring dashboard for pipeline health and data consistency, enhancing visibility and reliability across workflows.</p>
+              <div class="meta">Python · Airflow · Streamlit</div>
+              <p>Created automated validation checks and a monitoring dashboard that surfaced pipeline failures and critical metric drifts, improving data trust across stakeholders.</p>
             </div>
           </div>
         </section>
+
       </div>
 
       <aside>
-        <div class="card">
-          <div class="section-title"><h3>Contact</h3></div>
+        <div class="card fade-in">
+          <h2 class="section-title">Contact</h2>
           <div class="contact-list">
-            <div>📧 <a href="mailto:manipochamalla85@gmail.com" style="color:#cfe8ff">manipochamalla85@gmail.com</a></div>
-            <div>📞 (984) 329-1618</div>
-            <div>📍 Morrisville, North Carolina</div>
-            <div>🔗 <a href="https://www.linkedin.com/in/manikanta-pochamalla" style="color:#cfe8ff" target="_blank">linkedin.com/in/manikanta-pochamalla</a></div>
-            <div style="margin-top:10px"><a class="btn" href="Manikanta_Pochamalla_Data_Engineer.pdf" download>Download Resume</a></div>
+            <div>📧 <a href="mailto:manikantapochamalla85@gmail.com" style="color:#cfe8ff">manikantapochamalla85@gmail.com</a></div>
+            <div>📞 +1 984 329 1618</div>
+            <div>📍 United States</div>
+            <div>🔗 <a href="https://www.linkedin.com/in/manikanta-pochamalla" target="_blank" style="color:#cfe8ff">linkedin.com/in/manikanta-pochamalla</a></div>
+            <div>🐙 <a href="https://github.com/Mani88888" target="_blank" style="color:#cfe8ff">github.com/Mani88888</a></div>
+            <div style="margin-top:10px"><a class="btn btn-primary" href="Manikanta_Pochamalla_Data_Engineer.pdf" download>Download Resume</a></div>
           </div>
         </div>
 
-        <div class="card" style="margin-top:18px">
-          <div class="section-title"><h3>Education</h3></div>
-          <p class="meta">M.S. in Computer Science — Campbellsville University (GPA 3.7, Aug 2024)</p>
+        <div class="card fade-in" style="margin-top:18px">
+          <h2 class="section-title">Education</h2>
+          <p class="meta">M.S., Computer Science — Campbellsville University (Aug 2024)</p>
         </div>
 
-        <div class="card" style="margin-top:18px">
-          <div class="section-title"><h3>Technical Skills</h3></div>
+        <div id="skills" class="card fade-in" style="margin-top:18px">
+          <h2 class="section-title">Technical Skills</h2>
           <div class="skills">
             <div class="skill">Python</div>
             <div class="skill">SQL</div>
-            <div class="skill">AWS</div>
-            <div class="skill">Snowflake</div>
-            <div class="skill">Airflow</div>
+            <div class="skill">PySpark</div>
+            <div class="skill">Databricks</div>
             <div class="skill">Spark</div>
-            <div class="skill">Docker</div>
-            <div class="skill">DBT</div>
-            <div class="skill">GitHub Actions</div>
-            <div class="skill">BigQuery</div>
+            <div class="skill">AWS (S3, EMR, Lambda)</div>
+            <div class="skill">Airflow</div>
             <div class="skill">Kafka</div>
+            <div class="skill">Terraform</div>
+            <div class="skill">Docker · ECS · EKS</div>
+            <div class="skill">Snowflake</div>
             <div class="skill">Streamlit</div>
           </div>
         </div>
-      </aside>
-    </main>
 
-    <footer>
-      Crafted with ⚡ by Manikanta Pochamalla • <span id="year"></span>
-    </footer>
-  </div>
+      </aside>
+    </div>
+  </main>
+
+  <button id="topBtn" title="Back to top">↑</button>
+
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    // animated tagline rotation
+    const tagPhrases = [
+      'Building scalable data pipelines ⚙️',
+      'Cloud infrastructure & automation ☁️',
+      'ETL, Databricks & Spark for ML-ready data',
+      'Data quality, monitoring & observability'
+    ];
+    let tIndex=0;const tagEl=document.getElementById('animatedTag');
+    function rotateTag(){tagEl.textContent=tagPhrases[tIndex];tIndex=(tIndex+1)%tagPhrases.length}
+    rotateTag();setInterval(rotateTag,3000);
+
+    // fade-in on scroll
+    const faders=document.querySelectorAll('.fade-in');
+    const io=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in-view')} })},{threshold:0.12});
+    faders.forEach(f=>io.observe(f));
+
+    // progress bar
+    const progress=document.getElementById('progress');window.addEventListener('scroll',()=>{const h=document.documentElement;const pct=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100;progress.style.width=pct+"%";document.getElementById('topBtn').style.display=(h.scrollTop>300)?'block':'none'});
+
+    // smooth scroll for nav
+    document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth',block:'start'})}));
+
+    // back to top
+    document.getElementById('topBtn').addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+    // initial hero intro animation
+    window.addEventListener('load',()=>{setTimeout(()=>{document.getElementById('heroAvatar').classList.add('in-view');document.getElementById('heroIntro').classList.add('in-view')},150)});
   </script>
 </body>
 </html>
