@@ -1,204 +1,172 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Manikanta Pochamalla — Data Engineer</title>
-  <meta name="description" content="Manikanta Pochamalla — Data Engineer. Building scalable data pipelines, cloud infra, and ML-ready datasets." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manikanta Pochamalla | Data Engineer</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
   <style>
-    :root{--bg:#071025;--card:#081324;--muted:#99a6b3;--accent1:#7c5cff;--accent2:#39d0ff;--glass:rgba(255,255,255,0.03);--radius:14px;font-family:Inter,system-ui,Segoe UI,Roboto,Arial}
-    *{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,var(--bg),#071322);color:#e6eef6;line-height:1.45}
-    header{position:fixed;inset:0 0 auto 0;background:transparent;padding:18px 28px;display:flex;align-items:center;gap:20px;z-index:40}
-    .nav{display:flex;align-items:center;gap:18px;margin-left:auto}
-    .nav a{color:var(--muted);text-decoration:none;font-weight:600;font-size:14px}
-    .nav a:hover{color:white}
-    .container{max-width:1100px;margin:0 auto;padding:110px 20px 60px}
-    /* progress */
-    #progress{position:fixed;left:0;top:0;height:3px;background:linear-gradient(90deg,var(--accent1),var(--accent2));width:0;z-index:60}
-    /* hero */
-    .hero{display:grid;grid-template-columns:360px 1fr;gap:36px;align-items:center;min-height:82vh}
-    .avatar{width:360px;height:360px;border-radius:20px;background:linear-gradient(135deg,var(--accent1),var(--accent2));overflow:hidden;box-shadow:0 20px 50px rgba(6,8,20,0.7)}
-    .avatar img{width:100%;height:100%;object-fit:cover;display:block}
-    .hero-intro h1{font-size:40px;margin:0 0 8px}
-    .lead{color:var(--muted);margin:0 0 14px}
-    .tagline{font-weight:600;display:inline-block;padding:8px 12px;border-radius:999px;background:var(--glass);color:var(--muted)}
-    .cta{display:flex;gap:12px;margin-top:18px}
-    .btn{padding:10px 14px;border-radius:12px;font-weight:700;text-decoration:none}
-    .btn-primary{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#041}
-    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
-    /* sections */
-    .grid{display:grid;grid-template-columns:1fr 340px;gap:28px;margin-top:28px}
-    .card{background:var(--card);padding:18px;border-radius:var(--radius);box-shadow:0 8px 30px rgba(2,6,23,0.6)}
-    h2.section-title{margin:0 0 12px;font-size:18px}
-    .exp-item{margin-bottom:14px}
-    .exp-item h4{margin:0;font-size:15px}
-    .meta{color:var(--muted);font-size:13px;margin-top:6px}
-    .projects .project{padding:12px;border-radius:10px;background:linear-gradient(180deg,rgba(255,255,255,0.01),transparent);margin-bottom:10px}
-    .skills{display:flex;flex-wrap:wrap;gap:8px}
-    .skill{background:var(--glass);padding:6px 10px;border-radius:999px;color:var(--muted);font-weight:700;font-size:13px}
-    /* back to top */
-    #topBtn{position:fixed;right:18px;bottom:24px;background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#041;padding:10px;border-radius:12px;border:none;cursor:pointer;display:none}
-    /* animations */
-    .fade-in{opacity:0;transform:translateY(14px);transition:all 650ms cubic-bezier(.2,.9,.25,1)}
-    .in-view{opacity:1;transform:none}
-    /* responsive */
-    @media (max-width:980px){.hero{grid-template-columns:1fr;gap:18px}.avatar{width:200px;height:200px;margin:0 auto}.grid{grid-template-columns:1fr}.container{padding-top:140px}}
+    html {
+      scroll-behavior: smooth;
+    }
+    .fade-in {
+      animation: fadeIn 1s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
   </style>
 </head>
-<body>
-  <div id="progress"></div>
-  <header>
-    <div style="font-weight:800;color:white">Manikanta P.</div>
-    <nav class="nav" aria-label="Main navigation">
-      <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
-    </nav>
+<body class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition duration-500">
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 w-full bg-white dark:bg-gray-800 shadow z-50">
+    <div class="container mx-auto flex justify-between items-center px-6 py-4">
+      <h1 class="font-bold text-xl">Manikanta Pochamalla</h1>
+      <div class="space-x-6 hidden md:flex">
+        <a href="#summary" class="hover:text-yellow-400">Summary</a>
+        <a href="#experience" class="hover:text-yellow-400">Experience</a>
+        <a href="#projects" class="hover:text-yellow-400">Projects</a>
+        <a href="#skills" class="hover:text-yellow-400">Skills</a>
+        <a href="#certifications" class="hover:text-yellow-400">Certifications</a>
+        <a href="#contact" class="hover:text-yellow-400">Contact</a>
+      </div>
+      <button id="theme-toggle" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-yellow-400 transition">
+        🌙
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="text-center pt-28 pb-16 fade-in">
+    <h2 class="text-4xl font-bold">Manikanta Pochamalla</h2>
+    <p class="text-lg mt-3 text-gray-600 dark:text-gray-300">Data Engineer | AWS | Spark | Databricks | Airflow | Kafka</p>
+    <div class="mt-4 space-x-4">
+      <a href="mailto:manikantapochamalla85@gmail.com" class="underline hover:text-yellow-400">Email</a>
+      <a href="https://linkedin.com/in/manikanta-pochamalla" target="_blank" class="underline hover:text-yellow-400">LinkedIn</a>
+      <a href="https://github.com/Mani88888" target="_blank" class="underline hover:text-yellow-400">GitHub</a>
+      <a href="https://mani88888.github.io/manikanta-portfolio/" target="_blank" class="underline hover:text-yellow-400">Portfolio</a>
+    </div>
+    <div class="mt-6">
+      <a href="Manikanta_Pochamalla_Data_Engineer.pdf" download
+         class="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-6 py-3 rounded-lg shadow transition">
+         📄 Download Resume
+      </a>
+    </div>
   </header>
 
-  <main class="container">
-    <!-- HERO -->
-    <section class="hero">
-      <div class="avatar fade-in" id="heroAvatar">
-        <img src="20250510_135248_optimized.webp" alt="Manikanta Pochamalla">
-      </div>
-      <div class="hero-intro fade-in" id="heroIntro">
-        <div class="tagline">Data Engineer • Cloud • Big Data</div>
-        <h1>Manikanta Pochamalla</h1>
-        <p class="lead">Building scalable data pipelines, modernizing data platforms, and delivering production-ready datasets for analytics & ML.</p>
-        <div style="margin-top:8px;font-weight:700;color:var(--muted)" id="animatedTag"></div>
-        <div class="cta">
-          <a class="btn btn-primary" href="Manikanta_Pochamalla_Data_Engineer.pdf" download>Download Resume</a>
-          <a class="btn btn-ghost" href="https://www.linkedin.com/in/manikanta-pochamalla" target="_blank">LinkedIn</a>
-          <a class="btn btn-ghost" href="https://github.com/Mani88888" target="_blank">GitHub</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTENT GRID -->
-    <div class="grid">
-      <div>
-        <section id="about" class="card fade-in">
-          <h2 class="section-title">About</h2>
-          <p class="meta">Data Engineer with 4+ years of experience designing and implementing scalable data pipelines and ETL processes in cloud environments. Expertise in data modernization, optimizing processing workflows, and ensuring high data quality and reliability. Proficient in Python, SQL, PySpark, Databricks, and AWS services.</p>
-        </section>
-
-        <section id="experience" class="card fade-in" style="margin-top:18px">
-          <h2 class="section-title">Experience</h2>
-
-          <div class="exp-item">
-            <h4>Gatik — Data Engineer</h4>
-            <div class="meta">Feb 2023 – Present | United States</div>
-            <p>• Developed scalable data ingestion pipelines for vehicle sensor and telematics data using Python, AWS S3, and Kafka to support real-time analytics.<br>• Implemented data models and ETL in Databricks and SQL for autonomous truck performance analytics.<br>• Built ETL workflows using Airflow and Spark on EMR; implemented data quality checks, monitoring, and alerting.</p>
-          </div>
-
-          <div class="exp-item">
-            <h4>Deliverr — Data Engineer</h4>
-            <div class="meta">Oct 2021 – Aug 2022 | United States</div>
-            <p>• Designed scalable data pipelines using Python and Databricks, integrating e-commerce order and inventory data into analytics platforms.<br>• Built SQL transformations powering Looker dashboards and optimized Spark jobs for large-scale processing.<br>• Automated workflows with Airflow and AWS Step Functions; integrated Kafka for real-time ingestion.</p>
-          </div>
-        </section>
-
-        <section id="projects" class="card fade-in" style="margin-top:18px">
-          <h2 class="section-title">Selected Projects</h2>
-          <div class="projects">
-            <div class="project">
-              <strong>AI-Powered Data Ingestion Framework</strong>
-              <div class="meta">Python · Airflow · OpenAI API · AWS Lambda</div>
-              <p>Built an LLM-assisted ingestion and schema-mapping pipeline that reduced manual data curation time by ~60% and automated anomaly detection for incoming datasets.</p>
-            </div>
-
-            <div class="project">
-              <strong>Autonomous Vehicle Data Platform</strong>
-              <div class="meta">Databricks · Spark · AWS EMR · Snowflake</div>
-              <p>Engineered ingestion and transformation pipelines to process multi-terabyte telemetry data weekly, enabling ML training and near-real-time analytics for operations teams.</p>
-            </div>
-
-            <div class="project">
-              <strong>Data Quality Monitoring Dashboard</strong>
-              <div class="meta">Python · Airflow · Streamlit</div>
-              <p>Created automated validation checks and a monitoring dashboard that surfaced pipeline failures and critical metric drifts, improving data trust across stakeholders.</p>
-            </div>
-          </div>
-        </section>
-
-      </div>
-
-      <aside>
-        <div class="card fade-in">
-          <h2 class="section-title">Contact</h2>
-          <div class="contact-list">
-            <div>📧 <a href="mailto:manikantapochamalla85@gmail.com" style="color:#cfe8ff">manikantapochamalla85@gmail.com</a></div>
-            <div>📞 +1 984 329 1618</div>
-            <div>📍 United States</div>
-            <div>🔗 <a href="https://www.linkedin.com/in/manikanta-pochamalla" target="_blank" style="color:#cfe8ff">linkedin.com/in/manikanta-pochamalla</a></div>
-            <div>🐙 <a href="https://github.com/Mani88888" target="_blank" style="color:#cfe8ff">github.com/Mani88888</a></div>
-            <div style="margin-top:10px"><a class="btn btn-primary" href="Manikanta_Pochamalla_Data_Engineer.pdf" download>Download Resume</a></div>
-          </div>
-        </div>
-
-        <div class="card fade-in" style="margin-top:18px">
-          <h2 class="section-title">Education</h2>
-          <p class="meta">M.S., Computer Science — Campbellsville University (Aug 2024)</p>
-        </div>
-
-        <div id="skills" class="card fade-in" style="margin-top:18px">
-          <h2 class="section-title">Technical Skills</h2>
-          <div class="skills">
-            <div class="skill">Python</div>
-            <div class="skill">SQL</div>
-            <div class="skill">PySpark</div>
-            <div class="skill">Databricks</div>
-            <div class="skill">Spark</div>
-            <div class="skill">AWS (S3, EMR, Lambda)</div>
-            <div class="skill">Airflow</div>
-            <div class="skill">Kafka</div>
-            <div class="skill">Terraform</div>
-            <div class="skill">Docker · ECS · EKS</div>
-            <div class="skill">Snowflake</div>
-            <div class="skill">Streamlit</div>
-          </div>
-        </div>
-
-      </aside>
+  <!-- Summary -->
+  <section id="summary" class="py-12 fade-in">
+    <div class="container mx-auto px-6">
+      <h2 class="text-2xl font-semibold mb-4 border-b border-yellow-400 pb-2">Professional Summary</h2>
+      <p>
+        Results-driven Data Engineer with 4+ years of experience building, optimizing, and scaling data ecosystems in cloud environments.
+        Skilled in Python, SQL, and AWS with hands-on experience in Spark, Databricks, Airflow, and Kafka.
+        Expertise in developing ETL/ELT pipelines, data lake architectures, and ML-ready datasets for analytics and predictive modeling.
+      </p>
     </div>
-  </main>
+  </section>
 
-  <button id="topBtn" title="Back to top">↑</button>
+  <!-- Experience -->
+  <section id="experience" class="bg-gray-100 dark:bg-gray-800 py-12 fade-in">
+    <div class="container mx-auto px-6">
+      <h2 class="text-2xl font-semibold mb-4 border-b border-yellow-400 pb-2">Professional Experience</h2>
 
+      <div class="mb-6">
+        <h3 class="text-xl font-bold">Gatik – Data Engineer</h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400">Feb 2023 – Present</p>
+        <ul class="list-disc ml-6 mt-2 space-y-1">
+          <li>Architected scalable data ingestion pipelines using Python, AWS S3, and Kafka for 10TB+ weekly data.</li>
+          <li>Optimized Snowflake models, cutting query times by 40% and compute costs by 25%.</li>
+          <li>Implemented Spark jobs on AWS EMR & Databricks to support ML pipelines.</li>
+          <li>Automated ETL workflows via Airflow and Step Functions achieving 99.9% reliability.</li>
+          <li>Developed Python-based data validation framework improving data consistency by 30%.</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-bold">Deliverr – Data Engineer</h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400">Oct 2021 – Aug 2022</p>
+        <ul class="list-disc ml-6 mt-2 space-y-1">
+          <li>Designed and managed ETL workflows in Python, Airflow, and Databricks integrating logistics data.</li>
+          <li>Enhanced reporting by optimizing SQL transformations, reducing dashboard latency by 35%.</li>
+          <li>Processed 5TB+ daily data using Spark, improving pipeline performance by 40%.</li>
+          <li>Developed AWS infrastructure with Terraform improving scalability and cost-efficiency.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="py-12 fade-in">
+    <div class="container mx-auto px-6">
+      <h2 class="text-2xl font-semibold mb-4 border-b border-yellow-400 pb-2">Projects</h2>
+      <ul class="list-disc ml-6 space-y-2">
+        <li><b>Real-Time Data Streaming:</b> Built Kafka + AWS Kinesis pipeline processing 50K+ events/min for telemetry analytics.</li>
+        <li><b>ETL Automation Framework:</b> Python and SQL-based tool reducing QA time by 60%.</li>
+        <li><b>Data Quality Dashboard:</b> Built using Python, SQL, and Looker tracking 500+ KPIs for anomaly detection.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="bg-gray-100 dark:bg-gray-800 py-12 fade-in">
+    <div class="container mx-auto px-6">
+      <h2 class="text-2xl font-semibold mb-4 border-b border-yellow-400 pb-2">Technical Skills</h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <p><b>Languages:</b> Python, SQL, PySpark</p>
+        <p><b>Cloud:</b> AWS, GCP</p>
+        <p><b>Data Tools:</b> Snowflake, BigQuery, Databricks, Kafka</p>
+        <p><b>Orchestration:</b> Airflow, DBT</p>
+        <p><b>Infrastructure:</b> Terraform, Docker, CI/CD</p>
+        <p><b>Concepts:</b> Data Modeling, DataOps, ML Data Prep</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section id="certifications" class="py-12 fade-in">
+    <div class="container mx-auto px-6">
+      <h2 class="text-2xl font-semibold mb-4 border-b border-yellow-400 pb-2">Certifications</h2>
+      <ul class="list-disc ml-6 space-y-1">
+        <li>AWS Certified Data Engineer – Associate</li>
+        <li>Databricks Certified Data Engineer Associate (in progress)</li>
+        <li>SQL (Advanced) Certification – HackerRank (in progress)</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="bg-yellow-50 dark:bg-gray-800 py-12 fade-in">
+    <div class="container mx-auto px-6">
+      <h2 class="text-2xl font-semibold mb-4 border-b border-yellow-400 pb-2 text-center">Contact Me</h2>
+      <p class="text-center mb-6 text-gray-700 dark:text-gray-300">Have a question or want to collaborate? Drop a message below!</p>
+      
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="max-w-xl mx-auto bg-white dark:bg-gray-900 p-6 rounded-2xl shadow-lg space-y-4">
+        <input type="text" name="name" placeholder="Your Name" required class="w-full p-3 rounded-lg bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 focus:outline-none" />
+        <input type="email" name="email" placeholder="Your Email" required class="w-full p-3 rounded-lg bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 focus:outline-none" />
+        <textarea name="message" rows="5" placeholder="Your Message" required class="w-full p-3 rounded-lg bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 focus:outline-none"></textarea>
+        <button type="submit" class="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-6 py-3 rounded-lg shadow transition w-full">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white text-center py-6 mt-10">
+    <p>© 2025 Manikanta Pochamalla | Built with ❤️ CSS</p>
+  </footer>
+
+  <!-- Dark Mode Toggle Script -->
   <script>
-    // animated tagline rotation
-    const tagPhrases = [
-      'Building scalable data pipelines ⚙️',
-      'Cloud infrastructure & automation ☁️',
-      'ETL, Databricks & Spark for ML-ready data',
-      'Data quality, monitoring & observability'
-    ];
-    let tIndex=0;const tagEl=document.getElementById('animatedTag');
-    function rotateTag(){tagEl.textContent=tagPhrases[tIndex];tIndex=(tIndex+1)%tagPhrases.length}
-    rotateTag();setInterval(rotateTag,3000);
-
-    // fade-in on scroll
-    const faders=document.querySelectorAll('.fade-in');
-    const io=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in-view')} })},{threshold:0.12});
-    faders.forEach(f=>io.observe(f));
-
-    // progress bar
-    const progress=document.getElementById('progress');window.addEventListener('scroll',()=>{const h=document.documentElement;const pct=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100;progress.style.width=pct+"%";document.getElementById('topBtn').style.display=(h.scrollTop>300)?'block':'none'});
-
-    // smooth scroll for nav
-    document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth',block:'start'})}));
-
-    // back to top
-    document.getElementById('topBtn').addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
-
-    // initial hero intro animation
-    window.addEventListener('load',()=>{setTimeout(()=>{document.getElementById('heroAvatar').classList.add('in-view');document.getElementById('heroIntro').classList.add('in-view')},150)});
+    const themeToggle = document.getElementById("theme-toggle");
+    themeToggle.addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+      themeToggle.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+    });
   </script>
 </body>
 </html>
